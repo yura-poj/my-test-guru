@@ -5,20 +5,27 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 3.0.1
 
-* System dependencies
+[comment]: <> (* System dependencies)
 
-* Configuration
+[comment]: <> (* Configuration)
 
-* Database creation
+[comment]: <> (* Database creation)
 
-* Database initialization
+[comment]: <> (* Database initialization)
 
-* How to run the test suite
+[comment]: <> (* How to run the test suite)
 
-* Services (job queues, cache servers, search engines, etc.)
+[comment]: <> (* Services &#40;job queues, cache servers, search engines, etc.&#41;)
 
-* Deployment instructions
+[comment]: <> (* Deployment instructions)
 
-* ...
+[comment]: <> (* ...)
+
+List of entities:
+* User
+* Test
+* Question
+* Answer
+* Result
