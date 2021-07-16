@@ -11,6 +11,9 @@ class Test < ApplicationRecord
   scope :norm, -> {by_level(2..4)}
   scope :hard, -> {by_level(5..Float::INFINITY)}
 
+  validates :title, presence: true
+  validates :level, numericality: {only_integer: true }
+
   def self.tests_with_category(category)
     category_id = Category.find_by(title: category).id
     Test.where(category_id: category_id).order(id: :desc)
