@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = Category.create([{ title: :category1 }, { title: :category2 }])
-tests = Test.create([{ title: :test1, category_id: categories[0].id }, { title: :test1, category_id: categories[1].id }])
+tests = Test.create([{ title: :test1, category_id: categories[0].id, author_id: 1 },
+                     { title: :test1, level: 2,category_id: categories[1].id, author_id: 3}])
 questions = Question.create([{ body: :a, test_id: tests.first.id }, { body: :b, test_id: tests.second.id }])
 user = User.create(email: '1@1')
-answer = Answer.create(correct: true, user_id: user.id, question_id: questions.first.id)
+answer = Answer.create([{correct: true, user_id: user.id, question_id: questions.first.id},
+                        {user_id: user.id, question_id: questions.first.id}])

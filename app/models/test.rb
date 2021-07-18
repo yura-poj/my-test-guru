@@ -1,5 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :questions
 
   has_many :tests_users
@@ -14,12 +15,8 @@ class Test < ApplicationRecord
   scope :by_category, -> (category_title) { joins(:category).where(categories: { title: category_title }).order(id: :desc) }
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true }, :allow_nil => true
-  validate :validation_by_level_and_title
+  validates :level, numericality: { greater_than_or_equal_to: 1 }, :allow_nil => true
+  validates :level, uniqueness: { scope: :title,
+                                 message: "should be once per level" }
 
-  private
-
-  def validation_by_level_and_title
-    errors.add(:level) if Test.find_by(title: title, level: level)
-  end
 end
