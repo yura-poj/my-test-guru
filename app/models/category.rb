@@ -1,6 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :test
+  has_many :test
   default_scope { order(title: :asc) }
-
   validates :title, presence: true
 end

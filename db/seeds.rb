@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Answer.create
-category_create = Category.create([{ title: :category1 }, { title: :category2 }])
-question_create = Question.create([{ body: :a, test_id: 1 }, { body: :b, test_id: 2 }])
-test_create = Test.create([{ title: :test1, category_id: 1 }, { title: :test1, category_id: 2 }])
-User.create
+
+categories = Category.create([{ title: :category1 }, { title: :category2 }])
+tests = Test.create([{ title: :test1, category_id: categories[0].id }, { title: :test1, category_id: categories[1].id }])
+questions = Question.create([{ body: :a, test_id: tests.first.id }, { body: :b, test_id: tests.second.id }])
+user = User.create(email: '1@1')
+answer = Answer.create(correct: true, user_id: user.id, question_id: questions.first.id)

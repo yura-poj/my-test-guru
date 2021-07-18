@@ -17,8 +17,8 @@ module MyTestGuru
     # in config/environments, which are processed later.
     #
     config.time_zone = 'Astana'
-    config.i18n.available_locales = [:ru]
-    # config.I18n.default_locale = :ru
+    config.i18n.available_locales = [:ru, :en]
+    config.i18n.default_locale = :en
 
     # config.eager_load_paths << Rails.root.join("extras")
   end

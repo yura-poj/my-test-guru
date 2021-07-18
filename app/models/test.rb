@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  has_one :category
+  belongs_to :category
   has_many :questions
 
   has_many :tests_users
@@ -10,10 +10,11 @@ class Test < ApplicationRecord
   scope :easy, -> { by_level(0..1) }
   scope :norm, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
-  scope :by_category, ->(category) { Test.where(category_id: Category.find_by(title: category).id).order(id: :desc) }
+  #scope :by_category, ->(category) { where(category_id: Category.find_by(title: category).id).order(id: :desc) }
+  scope :by_category, -> (category_title) { joins(:category).where(categories: { title: category_title }).order(id: :desc) }
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true }
+  validates :level, numericality: { only_integer: true }, :allow_nil => true
   validate :validation_by_level_and_title
 
   private
