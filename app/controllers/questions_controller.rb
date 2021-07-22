@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def show
-    id = params[:id]
     render plain: @question.inspect
   end
 
@@ -13,7 +12,9 @@ class QuestionsController < ApplicationController
     render plain: @test.questions.inspect
   end
 
-  def new;end
+  def new
+    @question = Question.new(test_id: params[:test_id])
+  end
 
   def create
     question = Question.create(test_params)
