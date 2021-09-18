@@ -1,0 +1,10 @@
+tr
+  td = test.title
+  td = test_level(test)
+  td = link_to 'Show', test_path(test)
+  td = link_to 'Edit', edit_test_path(test)
+  td = link_to 'Delete',
+          test_path(test),
+          method: :delete,
+          data: { confirm: 'Are you sure?'}
+
