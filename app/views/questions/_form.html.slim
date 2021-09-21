@@ -1,0 +1,10 @@
+= form_with model: [@test, @question], url: @question.new_record? ? test_questions_path : question_path,  local: true do |form|
+  = render 'shared/errors', resource: @question
+
+  p
+    = form.label :body
+    = form.text_field :body
+  p
+    = form.hidden_field :test_id
+
+  p = form.submit
