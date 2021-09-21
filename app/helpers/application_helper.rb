@@ -1,6 +1,6 @@
 module ApplicationHelper
   def now_year
-    DateTime.now.year
+    Date.today.year
   end
 
   def github_link(author, repo)

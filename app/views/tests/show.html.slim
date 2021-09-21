@@ -3,21 +3,21 @@ p
   strong Title:
   = ' ' + @test.title
 p
-  strong Level:
-  = ' ' + @test.level.to_s
+  strong Level: &nbsp;
+  = @test.level
 p
   strong Category:
   = ' ' + @test.category.title
 p
   strong Number of questions:
-  = ' ' + @test.questions.count.to_s
+  = " #{@questions.size}"
 h2 Questions
 table
   tr
     th question
     th body
     th colspan="3" Actions
-  - @test.questions.each do |question|
+  - @questions.each do |question|
     tr
       td = question.id
       td = question.body

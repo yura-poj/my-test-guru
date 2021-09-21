@@ -4,10 +4,11 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def show
+    @questions = @test.questions.includes(answers: :user)
   end
 
   def update
-    if @test.update(question_params)
+    if @test.update(test_params)
       redirect_to @test
     else
       render :edit

@@ -1,3 +1,5 @@
+h1 Edit Test
+
 = form_with model: @test, local: true do |form|
   = render 'shared/errors', resource: @test
 
@@ -6,7 +8,7 @@
     = form.text_field :title
   p
     = form.label :level
-    = form.number_field :level
+    = form.select :level, Test.levels.keys
   p
     = form.label :category_id
     = form.collection_select :category_id, Category.all, :id, :title, prompt: true
