@@ -12,6 +12,8 @@ gem 'puma', '~> 5.0'
 
 gem 'pg'
 
+gem 'bourbon'
+
 gem 'slim'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'

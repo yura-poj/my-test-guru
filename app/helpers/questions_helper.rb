@@ -6,7 +6,7 @@ module QuestionsHelper
   private
 
   def action_text(question)
-    return  'Create new' if question.new_record?
+    return 'Create new' if question.new_record?
 
     'Edit'
   end
