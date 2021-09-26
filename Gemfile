@@ -12,7 +12,7 @@ gem 'puma', '~> 5.0'
 
 gem 'pg'
 
-gem 'bourbon'
+gem 'bootstrap'
 
 gem 'slim'
 # Use SCSS for stylesheets
