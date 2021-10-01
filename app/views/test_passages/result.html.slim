@@ -1,0 +1,15 @@
+- if @test_passage.result_in_procents < 85
+  h1 class='text-info' The #{@test_passage.test.title} test was not completed!
+  h2 class='text-danger'
+    | Your score is &nbsp;
+    = @test_passage.result_in_procents
+    | %
+-else
+  h1 class='text-info text-lg-center' The #{@test_passage.test.title} test was completed!
+  h2 class='text-success text-lg-center'
+    | Your score is &nbsp;
+    = @test_passage.result_in_procents
+    | %
+
+
+p class='text-warning' = link_to 'Back', tests_path
