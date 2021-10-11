@@ -1,18 +1,21 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_PERCENT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  after_validation :before_validation_set_first_question, on: :create
-  after_validation :next_step, on: :create
-  #after_update :next_question
+  before_validation :before_validation_set_first_question, on: :create
+  after_create :next_step
+  before_update :before_update_next_question
 
   attr_reader :step
+
+  delegate :title, to: :test, prefix: true
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     next_step
-    self.current_question = next_question
     save!
   end
 
@@ -20,10 +23,14 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def result_in_procents
-    return 0 if correct_questions == 0
+  def result_in_percents
+    return 0 if correct_questions.zero?
 
-    (test.questions.size / correct_questions.to_f) * 100
+    (correct_questions.to_f / test.questions.size) * 100
+  end
+
+  def success?
+    result_in_percents >= SUCCESS_PERCENT
   end
 
   private
@@ -45,7 +52,7 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-  def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+  def before_update_next_question
+    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end

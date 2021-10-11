@@ -22,7 +22,9 @@ module MyTestGuru
 
     # config.eager_load_paths << Rails.root.join("extras")
     config.generators do |g|
+      g.orm :active_record
       g.template_engine :slim
+      g.scaffold_stylesheet false
     end
 
   end
