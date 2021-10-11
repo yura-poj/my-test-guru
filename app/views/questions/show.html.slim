@@ -2,5 +2,11 @@ h2 Question
 p
   strong body:
   = ' ' + @question.body
+
+h2 Answers
+= link_to 'New answer', new_question_answer_path(@question)
+
+ol
+  = render @question.answers
 p = link_to 'Edit', edit_question_path(@question)
 p = link_to 'Back', test_path(@question.test)

@@ -1,0 +1,6 @@
+h1 class='text-info' The #{@test_passage.test_title} test was #{'not' unless @test_passage.success?} completed!
+h2 class="#{@test_passage.success? ? 'text-success text-lg-center' : 'text-danger'}"
+  | Your score is &nbsp;
+  = @test_passage.result_in_percents
+  | %
+p class='text-warning' = link_to 'Back', tests_path

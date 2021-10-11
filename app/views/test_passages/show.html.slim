@@ -1,0 +1,18 @@
+h1
+  | Passing the&nbsp;
+  = @test_passage.test.title
+  | &nbsp;test
+
+h2 class='text-md-end text-success'
+  = @test_passage.step || 1
+  = ' question from '
+  = @test_passage.test.questions.size
+
+b = @test_passage.current_question.body
+
+= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|
+  = form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
+    p
+      = b.check_box id: "answer_ids#{b.object_id}"
+      = b.label
+  p = form.submit 'Next'

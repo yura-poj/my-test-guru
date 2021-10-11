@@ -24,23 +24,19 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
 
-    respond_to do |format|
-      if @answer.save
-        redirect_to @answer
-      else
-        render :new
-      end
+    if @answer.save
+      redirect_to @answer
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /answers/1 or /answers/1.json
   def update
-    respond_to do |format|
-      if @answer.update(answer_params)
-        redirect_to @answer
-      else
-        render :edit
-      end
+    if @answer.update(answer_params)
+      redirect_to @answer
+    else
+      render :edit
     end
   end
 
@@ -60,6 +56,6 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:body, :correct)
+    params.require(:answer).permit(%i[body correct question_id])
   end
 end
