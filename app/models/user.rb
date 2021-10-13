@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-
-  include Auth
-
+  
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_test, class_name: 'Test'
