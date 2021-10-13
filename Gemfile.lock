@@ -212,6 +212,10 @@ GEM
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.3.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -270,7 +274,7 @@ DEPENDENCIES
   rubocop
   sass-rails (>= 6)
   selenium-webdriver
-  slim
+  slim-rails
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
