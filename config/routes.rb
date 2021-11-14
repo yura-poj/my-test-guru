@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  resources :users
+  get 'users/new'
+
+  get :login, to: 'sessions#new'
+
+  root to: 'tests#index'
+
+  get :signup, to: 'users#new'
+  delete :sign_out, to: 'sessions#destroy'
+
+  resources :sessions, only: %i[create]
+
+  resources :users, only: :create
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :tests do
     resources :questions, shallow: true, except: :index do
@@ -15,6 +26,4 @@ Rails.application.routes.draw do
       get :result
     end
   end
-
-  root to: 'tests#index'
 end

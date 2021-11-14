@@ -8,7 +8,8 @@ body {
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
 pre {
   background-color: #eee;
@@ -16,10 +17,10 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000; }
+  color: #ef2727; }
 
 a:visited {
-  color: #666; }
+  color: blue; }
 
 a:hover {
   color: #fff;
@@ -62,4 +63,9 @@ div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square; }
+
+.title {
+  align-content: center;
+  text-align: center;
+}
 

@@ -1,5 +1,4 @@
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,7 +16,7 @@ module MyTestGuru
     # in config/environments, which are processed later.
     #
     config.time_zone = 'Astana'
-    config.i18n.available_locales = [:ru, :en]
+    config.i18n.available_locales = %i[ru en]
     config.i18n.default_locale = :en
 
     # config.eager_load_paths << Rails.root.join("extras")
@@ -26,6 +25,5 @@ module MyTestGuru
       g.template_engine :slim
       g.scaffold_stylesheet false
     end
-
   end
 end
