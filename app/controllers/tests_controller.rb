@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :set_test, only: %i[show update edit destroy start]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -15,9 +14,9 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
-  def index;end
+  def index; end
 
   def new
     @test = Test.new

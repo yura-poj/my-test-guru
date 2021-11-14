@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe TestPassage, type: :model do
-  let(:test) {create(:test, questions: questions)}
-  let(:test_passage) {create(:test_passage, test: test)}
-  let(:questions) {[create(:question), create(:question)]}
+  let(:test) { create(:test, questions: questions) }
+  let(:test_passage) { create(:test_passage, test: test) }
+  let(:questions) { [create(:question), create(:question)] }
 
   describe 'next question' do
-
     before do
       test_passage.accept!([])
     end
@@ -25,7 +24,3 @@ RSpec.describe TestPassage, type: :model do
     end
   end
 end
-
-
-
-

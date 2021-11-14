@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'users/new'
 
   get :login, to: 'sessions#new'
@@ -27,5 +26,4 @@ Rails.application.routes.draw do
       get :result
     end
   end
-
 end

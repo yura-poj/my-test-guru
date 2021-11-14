@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
-  before_action :find_question, only: %i[ new create]
-  before_action :set_answer, only: %i[ show edit update destroy ]
+  before_action :find_question, only: %i[new create]
+  before_action :set_answer, only: %i[show edit update destroy]
 
   # GET /answers or /answers.json
   def index
@@ -8,8 +8,7 @@ class AnswersController < ApplicationController
   end
 
   # GET /answers/1 or /answers/1.json
-  def show
-  end
+  def show; end
 
   # GET /answers/new
   def new
@@ -17,8 +16,7 @@ class AnswersController < ApplicationController
   end
 
   # GET /answers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /answers or /answers.json
   def create

@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def path_needed?
-    NOT_NEEDED_PATHS.each { |path| return false if full_url_for.include?(path)}
+    NOT_NEEDED_PATHS.each { |path| return false if full_url_for.include?(path) }
 
     true
   end

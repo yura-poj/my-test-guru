@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[new create]
 
   # GET /users or /users.json
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show;end
+  def show; end
 
   # GET /users/new
   def new
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit;end
+  def edit; end
 
   # POST /users or /users.json
   def create
@@ -54,6 +54,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(%i[ email password password_confirmation])
+    params.require(:user).permit(%i[email password password_confirmation])
   end
 end

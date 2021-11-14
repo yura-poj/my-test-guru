@@ -7,7 +7,7 @@ module ApplicationHelper
     "https://github.com/#{author}/#{repo}"
   end
 
-  def flash_message()
+  def flash_message
     # if flash[:alert]
     #   content_tag :p, flash[:alert], class: 'flash alert'
     # end
@@ -17,6 +17,5 @@ module ApplicationHelper
         content_tag :p, message, class: "flash #{type}"
       end.join(''))
     end
-
   end
 end
