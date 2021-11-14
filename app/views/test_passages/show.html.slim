@@ -2,7 +2,7 @@ h1
   | Passing the&nbsp;
   = @test_passage.test.title
   | &nbsp;test
-  = @user.email
+  = current_user.email
 h2 class='text-md-end text-success'
   = @test_passage.step || 1
   = ' question from '

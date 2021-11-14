@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      cookies[:wish_path] = full_url_for
+      set_wish_path
       redirect_to login_path, alert: 'Log in, please'
     end
   end
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_wish_path
-    cookies[:wish_path] = full_url_for
+    cookies[:wish_path] = full_url_for if path_needed?
   end
 
   def path_needed?

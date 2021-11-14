@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     @current_user = nil
+    cookies[:wish_path] = nil
     redirect_to login_path, alert: 'Log out'
   end
 end
