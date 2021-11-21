@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # def after_sign_in_path_for(user)
-  #   # redirect_to admin_tests_path if user.type == Admin
-  # end
+  def after_sign_in_path_for(resource)
+    admin_tests_path if current_user.is_a?(Admin)
+  end
 
   def set_wish_path
     cookies[:wish_path] = full_url_for if path_needed?
