@@ -1,0 +1,10 @@
+= form_with model: [:admin, @test, @question], url: @question.new_record? ? test_questions_path : admin_question_path,  local: true do |form|
+  = render 'shared/errors', resource: @question
+
+  p
+    = form.label :body
+    = form.text_area :body, id: :answer_body, rows: 2, cols: 60
+  p
+    = form.hidden_field :test_id
+
+  p = form.submit

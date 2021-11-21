@@ -1,0 +1,15 @@
+h1 Question
+p = @answer.question.body
+p
+  b Answer: &nbsp;
+  = @answer.body
+p
+  b Correct: &nbsp;
+  = @answer.correct
+
+p
+  = link_to 'Edit', edit_admin_answer_path(@answer)
+  = ' | '
+  = link_to 'Back', admin_question_path(@answer.question)
+
+

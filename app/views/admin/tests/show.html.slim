@@ -1,0 +1,31 @@
+h2 Test
+p
+  strong Title:
+  = ' ' + @test.title
+p
+  strong Level: &nbsp;
+  = @test.level
+p
+  strong Category:
+  = ' ' + @test.category.title
+p
+  strong Number of questions:
+  = " #{@questions.size}"
+h2 Questions
+table
+  tr
+    th question
+    th body
+    th colspan="3" Actions
+  - @questions.each do |question|
+    tr
+      td = question.id
+      td = question.body
+      td = link_to 'Edit', edit_admin_question_path(question)
+      td = link_to 'Show', admin_question_path(question)
+      td = link_to 'Delete',
+              admin_question_path(question),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+p = link_to 'New question', new_admin_test_question_path(@test)
+p = link_to 'Back', admin_tests_path
