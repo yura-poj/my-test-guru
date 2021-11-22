@@ -6,7 +6,7 @@ class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages
 
-  enum level: { easy: 0, elementary: 1, advanced: 2, hard: 3, hero: 4 }.freeze
+  enum level: { easy: 0, elementary: 1, advanced: 2, hard: 3, hero: 4 }
 
   scope :by_level, ->(level) { where(level: level) }
   scope :by_category, lambda { |category_title|
@@ -14,7 +14,7 @@ class Test < ApplicationRecord
                       }
 
   validates :title, presence: true
-  validates :level, numericality: { greater_than_or_equal_to: 1 }, allow_nil: true
+  validates :level, inclusion: levels.keys
   validates :level, uniqueness: { scope: :title,
                                   message: 'should be once per level' }
 end

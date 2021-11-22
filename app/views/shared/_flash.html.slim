@@ -1,0 +1,3 @@
+- if flash.present?
+  - flash.each do |key, message|
+    = content_tag :p, message, class: "flash #{key}"

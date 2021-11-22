@@ -15,6 +15,9 @@ gem 'pg'
 gem 'bootstrap'
 
 gem 'slim-rails'
+
+gem 'html2slim'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -41,6 +44,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -54,6 +58,7 @@ group :development do
   gem 'spring'
 
   gem 'rubocop'
+
 end
 
 group :test do
