@@ -14,7 +14,7 @@ class Test < ApplicationRecord
                       }
 
   validates :title, presence: true
-  validates :level, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
+  validates :level, inclusion: levels.keys
   validates :level, uniqueness: { scope: :title,
                                   message: 'should be once per level' }
 end

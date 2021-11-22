@@ -8,10 +8,11 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+   # POST /resource/sign_in
+  def create
+    flash[:alert] = "Hi #{current_user.first_name} #{current_user.last_name}!"
+    super
+  end
 
   # DELETE /resource/sign_out
   # def destroy

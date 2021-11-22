@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    admin_tests_path if current_user.is_a?(Admin)
+    return admin_tests_path if current_user.is_a?(Admin)
+
+    root_path
   end
 
   def set_wish_path

@@ -9,7 +9,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to admin_question_path(@question)
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
@@ -39,7 +39,7 @@ class Admin::QuestionsController < Admin::BaseController
   def destroy
     @test = @question.test
     @question.destroy
-    redirect_to @test
+    redirect_to admin_test_path(@test)
   end
 
   private
