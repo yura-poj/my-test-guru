@@ -1,0 +1,4 @@
+en:
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed"

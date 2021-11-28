@@ -1,0 +1,6 @@
+ru:
+  admin:
+    tests:
+      index:
+        header: "Доступные тесты"
+      success: "Тест был успешно создан"

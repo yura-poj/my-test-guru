@@ -1,0 +1,13 @@
+en:
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+
+

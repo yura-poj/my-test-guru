@@ -1,0 +1,6 @@
+ru:
+  tests:
+    index:
+      header: "Доступные тесты"
+    title: 'Название'
+    level: 'Уровень'

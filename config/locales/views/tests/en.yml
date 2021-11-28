@@ -1,0 +1,7 @@
+en:
+  tests:
+    index:
+      header: "Tricky tests"
+
+    title: 'Title'
+    level: 'Level'

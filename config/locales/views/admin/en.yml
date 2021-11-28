@@ -1,0 +1,6 @@
+en:
+  admin:
+    tests:
+      index:
+        header: "Tricky tests"
+      success: "Test was successfully created"

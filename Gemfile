@@ -18,6 +18,10 @@ gem 'slim-rails'
 
 gem 'html2slim'
 
+#Localization
+
+gem 'rails-i18n'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

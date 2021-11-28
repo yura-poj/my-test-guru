@@ -1,0 +1,6 @@
+en:
+  tests_mailer:
+      completed_test:
+        subject: "You successfully complete test in TestGuru"
+
+
