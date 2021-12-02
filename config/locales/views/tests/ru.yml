@@ -2,5 +2,10 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
-    title: 'Название'
-    level: 'Уровень'
+
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+      actions: 'Действия'
+    test:
+      start: 'Старт'

@@ -32,5 +32,9 @@
 en:
   hello: "Hello world"
 
+  edit: 'Edit'
+  show: 'Show'
+  delete: 'Delete'
+  back: 'Back'
 
 

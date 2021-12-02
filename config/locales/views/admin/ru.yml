@@ -1,6 +1,34 @@
 ru:
   admin:
     tests:
+      edit:
+        header: 'Изменить тест'
+
+      new:
+        header: 'Создать тест'
       index:
         header: "Доступные тесты"
+        title: 'Название'
+        level: 'Уровень'
+        questions: 'Вопросы'
+        actions: 'Действия'
+        new: 'Новый тест'
+
+      show:
+        header: 'Тест %{title}'
+        title: 'Название: %{title}'
+        level: 'Уровень: %{level}'
+        questions: 'Вопросы'
+        category: 'Категория: %{category}'
+        number_of_questions: 'Количество вопросов: %{size}'
+        new_question: 'Новый вопрос'
+        question: 'Вопрос'
+        body: 'Тело'
+        actions: 'Действия'
+
+
       success: "Тест был успешно создан"
+
+
+      test:
+        start: 'Старт'

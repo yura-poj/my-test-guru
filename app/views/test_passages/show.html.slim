@@ -1,12 +1,7 @@
-h1
-  | Passing the&nbsp;
-  = @test_passage.test.title
-  | &nbsp;test
-  = current_user.email
+h2 = t('.header', title: @test_passage.test.title, email: current_user.email )
+
 h2 class='text-md-end text-success'
-  = @test_passage.step || 1
-  = ' question from '
-  = @test_passage.test.questions.size
+  = t('.step', step: @test_passage.step || 1, size: @test_passage.test.questions.size)
 
 b = @test_passage.current_question.body
 
@@ -15,4 +10,4 @@ b = @test_passage.current_question.body
     p
       = b.check_box id: "answer_ids#{b.object_id}"
       = b.label
-  p = form.submit 'Next'
+  p = form.submit t('.next')

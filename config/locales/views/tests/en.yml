@@ -3,5 +3,7 @@ en:
     index:
       header: "Tricky tests"
 
-    title: 'Title'
-    level: 'Level'
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+      actions: 'Actions'
