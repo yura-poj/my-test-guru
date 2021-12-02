@@ -1,5 +1,7 @@
 en:
   admin:
+    nav:
+      welcome: "Welcome, %{email} Guru!"
     tests:
       edit:
         header: 'Edit test'

@@ -2,10 +2,10 @@ div class='title'
 
   h2 = link_to 'Test Guru', root_path
 
+
+
   - if user_signed_in?
-    p class="nav user"
-    | Welcome,
-    = " #{current_user.email} Guru"
+    p = t('.welcome', email: current_user.email)
 
     p = link_to 'Log out',
             destroy_user_session_path,

@@ -1,5 +1,5 @@
 .nav.user {
-  text-align: right;
+  align-content: center;
   color: blue;
 }
 .a {
@@ -17,6 +17,11 @@
   color: #ffffff;
   background-color: #4293e6;
   margin-bottom: 40px;
+
+  a {
+    color: #ffffff;
+    place-content: end;
+  }
 }
 
 .nav-admin.title{
@@ -30,10 +35,4 @@
 
 .nav-admin.user-email{
   text-decoration: underline;
-}
-
-.nav.nav-admin
-a {
-  color: #ffffff;
-  text-align: right;
 }

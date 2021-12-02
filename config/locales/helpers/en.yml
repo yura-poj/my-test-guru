@@ -1,5 +1,7 @@
 en:
   helpers:
+    select:
+      prompt: "Please select"
     submit:
       test:
         create: "Create test"

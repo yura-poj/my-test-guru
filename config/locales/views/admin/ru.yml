@@ -1,5 +1,7 @@
 ru:
   admin:
+    nav:
+      welcome: "Добро пожаловать, %{email} Guru!"
     tests:
       edit:
         header: 'Изменить тест'
