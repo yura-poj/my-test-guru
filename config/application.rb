@@ -17,7 +17,8 @@ module MyTestGuru
     #
     config.time_zone = 'Astana'
     config.i18n.available_locales = %i[ru en]
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     # config.eager_load_paths << Rails.root.join("extras")
     config.generators do |g|

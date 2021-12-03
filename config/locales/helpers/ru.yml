@@ -1,0 +1,16 @@
+ru:
+  helpers:
+    select:
+      prompt: "Пожалуйста выберите"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+
+

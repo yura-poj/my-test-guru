@@ -1,0 +1,37 @@
+en:
+  admin:
+    nav:
+      welcome: "Welcome, %{email} Guru!"
+    tests:
+      edit:
+        header: 'Edit test'
+
+      new:
+        header: 'Create test'
+
+      index:
+        header: "Tricky tests"
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+        actions: 'Actions'
+        new: 'New test'
+
+      show:
+        header: 'Test %{title}'
+        title: 'Title: %{title}'
+        level: 'Level: %{level}'
+        questions: 'Questions'
+        category: 'Category: %{category}'
+        number_of_questions: 'Number of questions: %{size}'
+        new_question: 'New question'
+
+        question: 'Question'
+        body: 'Body'
+        actions: 'Actions'
+
+
+      success: "Test was successfully created"
+
+      test:
+        start: 'Start'

@@ -1,0 +1,8 @@
+en:
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    title:
+      welcome: "Welcome %{email} Guru!"

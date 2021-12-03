@@ -1,0 +1,9 @@
+ru:
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен"
+      result: "Ваш результат - %{score}%"
+    show:
+      header: "Прохождение теста %{title} пользователем - %{email}"
+      step: "%{step} вопрос из %{size}"
+      next: "Дальше"
