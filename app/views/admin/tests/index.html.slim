@@ -1,11 +1,14 @@
-h1 = t('.header')
+div class='container'
 
-p = link_to t('.new'), new_admin_test_path
+  h1 = t('.header')
 
-table
-  tr
-    th class='text-info' = t('.title')
-    th class='text-info' = t('.level')
-    th class='text-info' = t('.questions')
-    th class='text-info' colspan="4" = t('.actions')
-  = render Test.all
+
+  p = link_to t('.new'), new_admin_test_path
+
+  table class='table'
+    tr
+      th class='text-info' = t('.title')
+      th class='text-info' = t('.level')
+      th class='text-info' = t('.questions')
+      th class='text-info' colspan="4" = t('.actions')
+    = render Test.all

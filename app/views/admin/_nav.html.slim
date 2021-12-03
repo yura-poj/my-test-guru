@@ -1,5 +1,6 @@
-div class='nav nav-admin'
-  span class='nav-admin title' TestGuru Admin Panel &nbsp;
-  div class='nav-admin user'
+nav class='navbar navbar-light bg-info '
+  = link_to 'Test Guru Admin Panel', root_path, class: 'navbar-brand'
+  div class='navbar-text text-white'
     = t('.welcome', email: current_user.email)
-    = link_to 'Logout', destroy_user_session_path, method: :delete
+    | &nbsp; | &nbsp;
+    = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-white'

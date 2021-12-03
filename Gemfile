@@ -12,7 +12,12 @@ gem 'puma', '~> 5.0'
 
 gem 'pg'
 
+#UI
+
+gem 'jquery-rails'
 gem 'bootstrap'
+
+#SLIM
 
 gem 'slim-rails'
 
@@ -35,6 +40,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#AUTH
 gem 'devise', '~> 4.0'
 
 # Use Active Storage variant

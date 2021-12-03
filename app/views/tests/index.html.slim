@@ -1,9 +1,9 @@
 h1 = t('.header')
-
-table
-  tr
-    th class='text-info' = t('.title')
-    th class='text-info' = t('.level')
-    th class='text-info' = t('.questions')
-    th class='text-info' = t('.actions')
-  = render Test.all
+div class='container me-1'
+  table class="table border-primary text-lg-center mt-4"
+    tr class='text-info'
+      th = t('.title')
+      th = t('.level')
+      th = t('.questions')
+      th = t('.actions')
+    = render Test.all
