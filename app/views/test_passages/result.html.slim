@@ -1,4 +1,4 @@
 h1 class='text-info' = t('.header', title: @test_passage.test.title)
 h2 class="#{@test_passage.success? ? 'text-success text-lg-center' : 'text-danger'}"
   = t('.result', score: @test_passage.result_in_percents)
-p class='text-warning' = link_to 'Back', tests_path
+p class='text-warning' = link_to t('back'), tests_path
