@@ -21,6 +21,10 @@ module MyTestGuru
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
+
+    # Slim
     config.generators do |g|
       g.orm :active_record
       g.template_engine :slim

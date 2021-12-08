@@ -1,7 +1,7 @@
-tr
+tr class='bg-light'
   td = test.title
   td = test.level
   td = test.questions.size
-  td = button_to t('.start'), start_test_path(test)
+  td = button_to t('.start'), start_test_path(test), class: 'btn btn-outline-primary'
 
 

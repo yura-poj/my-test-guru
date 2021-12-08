@@ -1,0 +1,18 @@
+nav class='navbar navbar-light bg-light'
+  span
+    = link_to 'Test Guru |', root_path, class: 'navbar-brand'
+    = link_to 'Admin panel', admin_tests_path, class: 'navbar-brand text-decoration-underline'
+
+  span class='navbar-text '
+    - if user_signed_in?
+      = t('.welcome', email: current_user.email)
+      | &nbsp; | &nbsp;
+      = link_to 'Log out',
+              destroy_user_session_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+
+    - else
+      = link_to 'Log in', user_session_path
+      | &nbsp; | &nbsp;
+      = link_to 'Sign up', new_user_registration_path
