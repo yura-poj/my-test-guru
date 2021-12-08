@@ -3,6 +3,11 @@ ru:
     result:
       header: "Тест %{title} успешно завершен"
       result: "Ваш результат - %{score}%"
+
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
+
     show:
       header: "Прохождение теста %{title} пользователем - %{email}"
       step: "%{step} вопрос из %{size}"

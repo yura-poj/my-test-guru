@@ -3,6 +3,11 @@ en:
     result:
       header: "Test %{title} was successfully completed"
       result: "Your score is %{score}%"
+
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
+
     show:
       header: "Passing the %{title} test by %{email}"
       step: "%{step} question from %{size}"
