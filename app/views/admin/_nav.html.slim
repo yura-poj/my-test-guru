@@ -5,5 +5,7 @@ nav class='navbar navbar-light bg-info '
     | &nbsp; | &nbsp;
     = link_to 'Gists', admin_gists_path, class: 'text-white'
     | &nbsp; | &nbsp;
+    = link_to 'Change lang', language_change_language_path, class: 'text-white'
+    | &nbsp; | &nbsp;
     = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-white'
     | &nbsp; | &nbsp;
