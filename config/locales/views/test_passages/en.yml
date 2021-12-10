@@ -5,7 +5,8 @@ en:
       result: "Your score is %{score}%"
 
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! %{go}"
+      link_to_gist: "Watch gist"
       failure: "An error occurred while saving gist"
 
     show:
