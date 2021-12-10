@@ -3,4 +3,7 @@ nav class='navbar navbar-light bg-info '
   div class='navbar-text text-white'
     = t('.welcome', email: current_user.email)
     | &nbsp; | &nbsp;
+    = link_to 'Gists', admin_gists_path, class: 'text-white'
+    | &nbsp; | &nbsp;
     = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-white'
+    | &nbsp; | &nbsp;
