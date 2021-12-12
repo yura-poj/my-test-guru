@@ -1,0 +1,8 @@
+en:
+  services:
+    gist_question_service:
+      description: "Your saving question"
+      path: "test-guru-question.txt"
+
+
+

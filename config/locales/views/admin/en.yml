@@ -35,3 +35,9 @@ en:
 
       test:
         start: 'Start'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Question'
+        link: 'Link'
+        user: 'User'

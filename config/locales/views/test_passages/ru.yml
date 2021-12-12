@@ -5,7 +5,8 @@ ru:
       result: "Ваш результат - %{score}%"
 
     gist:
-      success: "Gist успешно сохранен!"
+      success: "Gist успешно сохранен! %{go}"
+      link_to_gist: "Смотреть gist"
       failure: "Во время сохранения gist произошла ошибка"
 
     show:

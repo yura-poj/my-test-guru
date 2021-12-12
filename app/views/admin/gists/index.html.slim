@@ -1,0 +1,10 @@
+div class='container'
+
+  h1 = t('.header')
+
+  table class='table'
+    tr
+      th class='text-info' = t('.question')
+      th class='text-info' = t('.link')
+      th class='text-info' = t('.user')
+    = render Gist.all

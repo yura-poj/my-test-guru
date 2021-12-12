@@ -14,9 +14,10 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "Some",
+      description: I18n.t('services.gist_question_service.description'),
+      public: true,
       files: {
-        'test-guru-question.txt' => {
+        I18n.t('services.gist_question_service.path')  => {
           content: gist_content
         }
       }
