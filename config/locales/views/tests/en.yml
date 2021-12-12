@@ -7,3 +7,5 @@ en:
       level: 'Level'
       questions: 'Questions'
       actions: 'Actions'
+    test:
+      start: 'Start'

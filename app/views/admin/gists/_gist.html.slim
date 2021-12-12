@@ -1,4 +1,5 @@
+
 tr
-  td = link_to(gist.question.body, admin_question_path(gist.question))
-  td = link_to(gist.url, gist.url)
+  td = link_to(gist.question.body.truncate(28), admin_question_path(gist.question))
+  td = link_to(gist.gist_id, create_gist_link(gist.gist_id))
   td = gist.user.email

@@ -34,3 +34,10 @@ ru:
 
       test:
         start: 'Старт'
+
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Вопрос'
+        link: 'Ссылка'
+        user: 'Пользователь'
