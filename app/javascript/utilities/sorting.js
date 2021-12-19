@@ -1,8 +1,11 @@
-document.addEventListener('turbolinks:load', function (){
-    var control = document.querySelector('.sort-by-title')
+window.onload=function() {
+    document.addEventListener('turbolinks:load', function () {
+        var control = document.querySelector('.sort-by-title')
 
-    control.addEventListener('click', function (){
-        alert('Click')
+        control.addEventListener('click', function () {
+            alert('Click')
+        })
     })
-})
+}
+
 console.log('hey')
