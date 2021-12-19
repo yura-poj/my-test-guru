@@ -18,6 +18,7 @@ gem 'pg'
 
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'octicons_helper'
 
 #SLIM
 
