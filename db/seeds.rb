@@ -6,10 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+admin = Admin.create(email: 'admin@example.com', password: 'asdfgh', first_name: 'Elon', last_name: 'Mask')
+user = User.create(email: 'user@example.com', password: 'asdfgh', first_name: 'Elon', last_name: 'Mask')
+
 categories = Category.create([{ title: :category1 }, { title: :category2 }])
-tests = Test.create([{ title: :test1, category_id: categories[0].id, author_id: 1 },
-                     { title: :test1, level: 2, category_id: categories[1].id, author_id: 3 }])
-questions = Question.create([{ body: :a, test_id: tests.first.id }, { body: :b, test_id: tests.second.id }])
-user = User.create(email: '1@1')
-answers = Answer.create([{ correct: true, user_id: user.id, question_id: questions.first.id, body: 'opa ganga style' },
-                         { user_id: user.id, question_id: questions.first.id, body: 'oh man' }])
+tests = Test.create([{ title: :test1, level: 2, category: categories[0], author: admin },
+                     { title: :test2, level: 1, category: categories[1], author: admin }])
+questions = Question.create([{ body: :True?, test: tests.first },
+                             { body: :False?, test: tests.first },
+                             { body: 'True and false?', test: tests.first}])
+answers = Answer.create([
+                          { correct: true, question: questions.first, body: :True },
+                          { correct: false, question: questions.first, body: :False },
+                          { correct: true, question: questions.second, body: :False},
+                          { correct: false, question: questions.second, body: :True},
+                          { correct: true, question: questions.third, body: :False},
+                          { correct: true, question: questions.third, body: :True},
+                          { correct: false, question: questions.third, body: :"I don't know"}
+                        ])

@@ -1,17 +1,19 @@
+
+h1 = t('.header')
+
+
+p = link_to t('.new'), new_admin_test_path
+
 div class='container'
 
-  h1 = t('.header')
-
-
-  p = link_to t('.new'), new_admin_test_path
 
   table class='table'
     tr
-      th class='text-info sort-by-title pointer'
+      th class='text-info sort-by-title pointer border-d'
         = t('.title')
         = octicon 'arrow-up', class: 'text-success hide'
         = octicon 'arrow-down', class: 'text-success hide'
       th class='text-info' = t('.level')
       th class='text-info' = t('.questions')
-      th class='text-info' colspan="4" = t('.actions')
+      th class='text-info text-center' colspan="4" = t('.actions')
     = render Test.all

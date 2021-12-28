@@ -8,5 +8,7 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'admin/nav'
-    = render 'shared/flash'
-    = yield
+    div class='container'
+      = render 'shared/flash'
+      = yield
+      = render 'shared/footer'

@@ -4,6 +4,7 @@ default: &default
   timeout: 5000
   user: yura
   password: '2006yura'#Rails.application.credentials[:db_password]
+  port: 5433
 
 development:
   <<: *default

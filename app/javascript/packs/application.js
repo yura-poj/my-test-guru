@@ -11,6 +11,7 @@
 //= require_tree .
 
 require('utilities/sorting')
+require('utilities/password_auth')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -21,7 +22,5 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-console.log('big trouble')
 
 
