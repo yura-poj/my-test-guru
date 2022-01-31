@@ -1,12 +1,12 @@
 class TestPassage < ApplicationRecord
-  SUCCESS_PERCENT = 85
+  SUCCESS_PERCENT = 85.freeze
 
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  after_create :next_step
+  before_create :next_step
   before_update :before_update_next_question
 
   attr_reader :step
@@ -36,7 +36,7 @@ class TestPassage < ApplicationRecord
   private
 
   def next_step
-    @step ||= 1
+    @step ||= 0
     @step += 1
   end
 

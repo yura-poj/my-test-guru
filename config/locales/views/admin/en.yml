@@ -35,6 +35,10 @@ en:
 
       test:
         start: 'Start'
+
+      form_inline:
+        submit: 'OK'
+
     gists:
       index:
         header: 'Gists'

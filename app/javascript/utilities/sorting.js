@@ -1,10 +1,7 @@
-window.onload=function() {
-    document.addEventListener('turbolinks:load', function () {
-        let control = document.querySelector('.sort-by-title')
-
-        if (control) { control.addEventListener('click', SortRowsByTitle) }
-    })
-}
+document.addEventListener('turbolinks:load', function () {
+    let control = document.querySelector('.sort-by-title')
+    if (control) { control.addEventListener('click', SortRowsByTitle) }
+})
 
 function SortRowsByTitle() {
     let table = document.querySelector('table')
@@ -18,8 +15,8 @@ function SortRowsByTitle() {
         sortedRows.push(rows[i])
     }
 
-    var sortedTable = document.createElement('table')
-    //sortedTable.classList.add('table')
+    let sortedTable = document.createElement('table')
+    // sortedTable.classList.add('table')
     sortedTable.appendChild(rows[0])
 
 
