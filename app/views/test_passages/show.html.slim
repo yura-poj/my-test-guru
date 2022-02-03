@@ -4,7 +4,6 @@ h2 = t('.header', title: @test_passage.test.title, email: current_user.email )
 
 h2 class='text-md-end text-success'
   = t('.step', step: @test_passage.step, size: @test_passage.test.questions.size)
-
 p
   b = @test_passage.current_question.body
 
@@ -16,3 +15,5 @@ p
       = b.label
   p = link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post
   p class='next-answer' = form.submit t('.next')
+
+= console

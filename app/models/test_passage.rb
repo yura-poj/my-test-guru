@@ -5,11 +5,9 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
   before_create :next_step
+  before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_next_question
-
-  attr_reader :step
 
   delegate :title, to: :test, prefix: true
 
@@ -36,8 +34,7 @@ class TestPassage < ApplicationRecord
   private
 
   def next_step
-    @step ||= 0
-    @step += 1
+    self.step += 1
   end
 
   def before_validation_set_first_question

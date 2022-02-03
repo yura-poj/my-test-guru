@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Test, type: :model do
-  let(:test) { create(:test, title: 'test1') }
+  let(:category) { create(:category) }
+  let(:test) { create(:test, title: 'test1', category: category) }
 
 
   it 'return title' do

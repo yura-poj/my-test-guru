@@ -11,10 +11,13 @@ user = User.create(email: 'user@example.com', password: 'asdfgh', first_name: 'E
 
 categories = Category.create([{ title: :category1 }, { title: :category2 }])
 tests = Test.create([{ title: :test1, level: 2, category: categories[0], author: admin },
-                     { title: :test2, level: 1, category: categories[1], author: admin }])
+                     { title: :test2, level: 1, category: categories[1], author: admin },
+                     { title: :tester, level: 2, category: categories[0], author: admin }])
 questions = Question.create([{ body: :True?, test: tests.first },
                              { body: :False?, test: tests.first },
                              { body: 'True and false?', test: tests.first}])
+Question.create([{ body: :True?, test: tests.third }, { body: :False?, test: tests.third },
+                 { body: 'True and false?', test: tests.third}])
 answers = Answer.create([
                           { correct: true, question: questions.first, body: :True },
                           { correct: false, question: questions.first, body: :False },
