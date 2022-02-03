@@ -16,7 +16,7 @@ global.$ = require("jquery")
 require('../utilities/sorting')
 require('../utilities/form_inline')
 require('../utilities/password_auth')
-require('../utilities/test_passage_progress')
+require('../utilities/progress')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
