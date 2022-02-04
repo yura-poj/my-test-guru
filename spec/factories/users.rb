@@ -1,6 +1,16 @@
 FactoryBot.define do
-  factory :user do
-    email { 'email@gmail.com' }
-    password_digest { 'op' }
+  factory :user, class: User do
+    sequence(:email) { |n| "#{n}@example.com" }
+    first_name { 'Elon' }
+    last_name { 'Mask' }
+
+    password { 'password' }
+    password_confirmation { 'password' }
+    confirmed_at { 1.day.ago }
+
+    trait :admin do
+      admin { true }
+    end
+
   end
 end

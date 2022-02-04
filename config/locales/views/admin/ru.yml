@@ -35,6 +35,9 @@ ru:
       test:
         start: 'Старт'
 
+      form_inline:
+        submit: 'OK'
+
     gists:
       index:
         header: 'Gists'

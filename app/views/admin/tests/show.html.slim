@@ -1,5 +1,7 @@
 h2 = t('.header', title: @test.title)
 
+p = link_to t('edit'), edit_admin_test_path(@test)
+
 p = t('.title', title: @test.title)
 p = t('.level', level: @test.level)
 p = t('.category', category: @test.category.title)
