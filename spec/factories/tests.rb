@@ -3,6 +3,6 @@ FactoryBot.define do
     sequence(:title) { |n| "Test#{n}" }
     level { 2 }
     category
-    author { User.create }
+    author factory: :user
   end
 end

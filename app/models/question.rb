@@ -3,5 +3,5 @@ class Question < ApplicationRecord
   has_many :answers
   has_many :gists
 
-  validates :body, presence: true
+  validates :body, :test_id, presence: true
 end

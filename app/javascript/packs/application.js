@@ -3,14 +3,20 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 //= require turbolinks
+//= require rails-ujs
 //= require jquery3
 //= require jquery_ujs
-//= require rails-ujs
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
 
-require('utilities/sorting')
+
+require("jquery")
+global.$ = require("jquery")
+require('../utilities/sorting')
+require('../utilities/form_inline')
+require('../utilities/password_auth')
+require('../utilities/progress')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -21,7 +27,5 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-console.log('big trouble')
 
 
