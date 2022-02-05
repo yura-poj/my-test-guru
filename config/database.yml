@@ -18,4 +18,4 @@ test:
 
 production:
   <<: *default
-  database: db/test_guru_production
+  database: test_guru_production
