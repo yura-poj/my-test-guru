@@ -88,9 +88,9 @@ Rails.application.configure do
     address:                'smtp.gmail.com',
     port:                   587,
     user_name:              ENV['SMTP_USERNAME'],
-    password:               ENV['SMTP_USERNAME'],
-    authentication:        'plain',
-    enable_starttls_auto:  true }
+    password:               ENV['SMTP_PASSWORD'],
+    authentication:         'plain',
+    enable_starttls_auto:   true }
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
