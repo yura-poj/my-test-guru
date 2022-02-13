@@ -1,8 +1,8 @@
 class FeedbackMailer < ApplicationMailer
-  def feedback(email:, theme:, problem:)
-    @email = email
-    @theme = theme
-    @problem = problem
+  def feedback(params:)
+    @email = params[:email]
+    @theme = params[:theme]
+    @problem = params[:problem]
 
     mail to: ENV['FEEDBACK_CONTACT']
   end
