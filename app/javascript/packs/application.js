@@ -17,6 +17,7 @@ require('../utilities/sorting')
 require('../utilities/form_inline')
 require('../utilities/password_auth')
 require('../utilities/progress')
+require('../utilities/feedback')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"

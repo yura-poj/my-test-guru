@@ -10,7 +10,6 @@ $(document).on('turbolinks:load', function (){
 })
 
 function formInlineLinkHandler(event){
-    console.log('f')
     event.preventDefault()
     let testId = this.dataset.testId
 
