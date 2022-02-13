@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = Admin.create(email: 'admin@example.com', password: 'asdfgh', first_name: 'Elon', last_name: 'Mask')
-user = User.create(email: 'user@example.com', password: 'asdfgh', first_name: 'Elon', last_name: 'Mask')
+admin = Admin.create(email: 'admin@example.com', password: 'asdfgh', password_confirmation: 'asdfgh',
+                     first_name: 'Elon', last_name: 'Mask', confirmed_at: 1.day.ago)
+user = User.create(email: 'user@example.com', password: 'asdfgh', password_confirmation: 'asdfgh',
+                   first_name: 'Elon', last_name: 'Mask', confirmed_at: 1.day.ago)
 
 categories = Category.create([{ title: :category1 }, { title: :category2 }])
 tests = Test.create([{ title: :test1, level: 2, category: categories[0], author: admin },
