@@ -1,0 +1,14 @@
+= form_with url: "feedback/create",
+            method: :get,
+            class: 'feedback',
+            html: { style: 'display:none'} do | form |
+  p
+    = form.label :email
+    br = form.text_field :email
+  p
+    = form.label :theme
+    br = form.text_field :theme
+  p
+    = form.label :problem
+    br = form.text_field :problem
+  p = form.submit 'Send feedback'

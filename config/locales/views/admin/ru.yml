@@ -8,6 +8,7 @@ ru:
 
       new:
         header: 'Создать тест'
+
       index:
         header: "Доступные тесты"
         title: 'Название'
