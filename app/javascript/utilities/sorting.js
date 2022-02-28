@@ -5,18 +5,14 @@ document.addEventListener('turbolinks:load', function () {
 
 function SortRowsByTitle() {
     let table = document.querySelector('table')
-    // Nodelist
-    // Docs - https://developer.mozilla.org/en-US/docs/Web/API/NodeList
     let rows = table.querySelectorAll('tr')
     let sortedRows = []
 
-    // select all table rows except the first one which is the header
     for (let i = 1; i < rows.length; i++) {
         sortedRows.push(rows[i])
     }
 
     let sortedTable = document.createElement('table')
-    // sortedTable.classList.add('table')
     sortedTable.appendChild(rows[0])
 
 
