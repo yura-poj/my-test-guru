@@ -21,20 +21,20 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    return test_completed if @test_passage.time_out?
     @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
-      redirect_to result_test_passage_path(@test_passage)
-    else
-      render :show
-    end
+    @test_passage.completed? ? test_completed : ( render :show )
   end
 
   private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def test_completed
+    TestsMailer.completed_test(@test_passage).deliver_now
+    redirect_to result_test_passage_path(@test_passage)
   end
 
 end

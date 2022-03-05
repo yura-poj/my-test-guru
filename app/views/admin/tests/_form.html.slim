@@ -10,4 +10,8 @@
   p
     = form.label :category_id
     br = form.collection_select :category_id, Category.all, :id, :title, prompt: true
+  p
+    = form.label :timer
+    br = form.number_field :timer, in: 0..60 , step: 5
+    | Minutes
   p = form.submit

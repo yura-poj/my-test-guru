@@ -18,7 +18,11 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_out?
+  end
+
+  def time_out?
+    self.created_at + self.test.timer.minutes < DateTime.now
   end
 
   def result_in_percents
@@ -29,6 +33,10 @@ class TestPassage < ApplicationRecord
 
   def success?
     result_in_percents >= SUCCESS_PERCENT
+  end
+
+  def time_end
+    self.created_at + self.test.timer.minutes
   end
 
   private

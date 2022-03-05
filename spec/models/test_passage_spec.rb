@@ -11,6 +11,12 @@ RSpec.describe TestPassage, type: :model do
     end
   end
 
+  describe 'time out?' do
+    it 'should return false' do
+      expect(test_passage.time_out?).to eq false 
+    end
+  end
+
   describe 'next question' do
     before do
       questions
