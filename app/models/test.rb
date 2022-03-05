@@ -1,4 +1,5 @@
 class Test < ApplicationRecord
+  LESS_VALUE_OF_TIMER = 5.freeze
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :questions
@@ -13,8 +14,9 @@ class Test < ApplicationRecord
                         joins(:category).where(categories: { title: category_title }).order(id: :desc)
                       }
 
-  validates :title, presence: true
+  validates :title, :timer, presence: true
   validates :level, inclusion: levels.keys
   validates :level, uniqueness: { scope: :title,
                                   message: 'should be once per level' }
+  validates :timer, numericality: { only_integer: true, greater_than_or_equal_to: LESS_VALUE_OF_TIMER}
 end

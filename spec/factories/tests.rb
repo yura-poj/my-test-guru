@@ -4,5 +4,6 @@ FactoryBot.define do
     level { 2 }
     category
     author factory: :user
+    timer {10}
   end
 end
