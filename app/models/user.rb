@@ -10,6 +10,7 @@ class User < ApplicationRecord
          :trackable
 
   has_many :test_passages
+  # has_many :badges
   has_many :tests, through: :test_passages
   has_many :created_test, class_name: 'Test'
   has_many :gists
