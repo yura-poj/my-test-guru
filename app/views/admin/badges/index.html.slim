@@ -1,1 +1,25 @@
-h1 Badges#index
+h1 Badges
+p = link_to 'new badge', new_admin_badge_path
+
+div class='container'
+
+  table class='table'
+    tr
+      th class='text-info' = t('.title')
+      th class='text-info' = t('.type')
+      th class='text-info' = t('.id')
+      th class='text-info text-center' colspan="3" = t('.actions')
+    = render @badges
+
+h2 Earned Badges
+
+- if @earned_badges
+    div class='container'
+
+    table class='table'
+      tr
+        th class='text-info' = t('.title')
+        th class='text-info' = t('.type')
+        th class='text-info' = t('.id')
+        th class='text-info text-center' colspan="3" = t('.actions')
+      = render @earned_badges

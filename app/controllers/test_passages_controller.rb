@@ -7,7 +7,9 @@ class TestPassagesController < ApplicationController
     @user = current_user
   end
 
-  def result; end
+  def result
+    Badge.earned_badges(@test_passage)
+  end
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call

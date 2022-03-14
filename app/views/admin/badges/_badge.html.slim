@@ -1,0 +1,10 @@
+tr
+  td class='align-middle' = badge.title
+  td class='align-middle' = badge.action_type
+  td class='align-middle' = badge.object_id
+  td class='align-middle' = link_to t('show'), admin_badge_path(badge)
+  td class='align-middle' = link_to t('edit'), edit_admin_badge_path(badge)
+  td class='align-middle' = link_to t('delete'),
+          admin_badge_path(badge),
+          method: :delete,
+          data: { confirm: 'Are you sure?'}
