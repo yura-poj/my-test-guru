@@ -1,0 +1,17 @@
+= form_with model: [:admin, @test], local: true do |form|
+  = render 'shared/errors', resource: @test
+
+  p
+    = form.label :title
+    br = form.text_field :title
+  p
+    = form.label :level
+    br = form.select :level, Test.levels.keys
+  p
+    = form.label :category_id
+    br = form.collection_select :category_id, Category.all, :id, :title, prompt: true
+  p
+    = form.label :timer
+    br = form.number_field :timer, in: 0..60 , step: 5
+    | Minutes
+  p = form.submit
