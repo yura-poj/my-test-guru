@@ -36,6 +36,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def destroy
+    EarnedBadge.where(badge: @badge).each { |earned_badge| earned_badge.destroy }
     @badge.destroy
     render :index
   end

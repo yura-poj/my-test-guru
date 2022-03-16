@@ -9,13 +9,14 @@ class Badge < ApplicationRecord
   enum action_type: { test: 1, category: 2, level: 3 }
 
   def self.earned_badges(test_passage)
-    @badges = []
+    @earned_badges = []
     @test_passage = test_passage
     @test = @test_passage.test
+    @user = @test_passage.user
     check_badge_test
     check_badge_category
     check_badge_level
-    return @badges
+    return @earned_badges
   end
 
   private
@@ -31,17 +32,17 @@ class Badge < ApplicationRecord
   end
 
   def self.check_badge_level
-    badge = Badge.find_by(action_type: :level, object_id: @test.level)
-    push_badge(badge: badge) if badge and test_with_one_try?
+    badge = Badge.find_by(action_type: :level, object_id: Test.levels[@test.level])
+    push_badge(badge: badge) if badge and all_test_in_level_done?
   end
 
   def self.push_badge(badge:)
-    current_user.push(badge)
-    @badges.push(badge)
+    @user.badges.push(badge)
+    @earned_badges << badge
   end
 
   def self.test_with_one_try?
-    TestPassage.where(user: current_user, test: @test).length == 1 and @test_passage.success?
+    TestPassage.where(user: @user, test: @test).length == 1 and @test_passage.success?
   end
 
   def self.all_test_in_category_done?
@@ -53,6 +54,6 @@ class Badge < ApplicationRecord
   end
 
   def self.test_success?(test:)
-    TestPassage.where(user: current_user, test: test).any? { |test_passage| test_passage.success? }
+    TestPassage.where(user: @user, test: test).any? { |test_passage| test_passage.success? }
   end
 end

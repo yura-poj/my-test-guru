@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    Badge.earned_badges(@test_passage)
+    @earned_badges = Badge.earned_badges(@test_passage)
   end
 
   def gist

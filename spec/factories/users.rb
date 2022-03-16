@@ -7,7 +7,6 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
     confirmed_at { 1.day.ago }
-    current_sign_in_at { 1.day.ago }
 
     trait :admin do
       admin { true }

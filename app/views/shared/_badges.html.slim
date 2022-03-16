@@ -1,0 +1,7 @@
+div
+  - if badges.present?
+    = content_tag :div do
+      h2 Earned badges
+      ul
+        = badges.each do |badge|
+          li = badge.title
