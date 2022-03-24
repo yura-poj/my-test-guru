@@ -1,0 +1,5 @@
+tr
+  td class='align-middle' = badge.title
+  td class='align-middle' = badge.action_type
+  td class='align-middle' = target_column(badge: badge)
+  td class='align-middle' = link_to t('show'), badge_path(badge)

@@ -31,9 +31,15 @@ Rails.application.routes.draw do
       member do
         put :update_inline
         patch :update_inline
+        get :new_badge
       end
     end
     resources :gists, only:  %i[show index]
     resources :badges
+    resources :categories, only: %i[new destroy index create] do
+      member do
+        get :new_badge
+      end
+    end
   end
 end

@@ -1,2 +1,28 @@
-h1 Badges#index
-p Find me in app/views/badges/index.html.slim
+h1 Badges
+
+
+h2 Earned Badges
+
+- if @earned_badges
+  div class='container'
+
+  table class='table'
+    tr
+      th class='text-info' = t('.title')
+      th class='text-info' = t('.type')
+      th class='text-info' = t('.target')
+      th class='text-info ' colspan="1" = t('.actions')
+    = render @earned_badges
+
+h2 All badges
+
+div class='container'
+  table class='table'
+    tr
+      th class='text-info' = t('.title')
+      th class='text-info' = t('.type')
+      th class='text-info' = t('.target')
+      th class='text-info ' colspan="1" = t('.actions')
+    = render @badges
+
+p = link_to t('back'), root_path

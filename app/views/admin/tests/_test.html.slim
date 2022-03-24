@@ -13,6 +13,7 @@ tr
           admin_test_path(test),
           method: :delete,
           data: { confirm: 'Are you sure?'}
+  td class='align-middle' = link_to 'Create badge', new_badge_admin_test_path(test)
   td class='align-middle' = button_to t('.start'), start_test_path(test)
 
 

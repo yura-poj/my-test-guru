@@ -1,2 +1,10 @@
-h1 Badges#show
-p Find me in app/views/badges/show.html.slim
+h1 = @badge.title + ' badge'
+p
+  b Action type
+  br = @badge.action_type
+p
+  b Target title
+  br = target_column(badge: @badge)
+= tag.img src: @badge.image_url, width: 200, height: 200
+
+p = link_to t('back'), admin_badges_path

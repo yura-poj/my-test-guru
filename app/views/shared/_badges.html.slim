@@ -1,7 +1,6 @@
 div
   - if badges.present?
-    = content_tag :div do
-      h2 Earned badges
-      ul
-        = badges.each do |badge|
-          li = badge.title
+    h2 Earned badges
+    - badges.each do |badge|
+      p class='text-success' = badge.title
+      = tag.img src: badge.image_url, width: 200, height: 200

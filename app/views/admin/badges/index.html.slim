@@ -1,5 +1,4 @@
 h1 Badges
-p = link_to 'new badge', new_admin_badge_path
 
 div class='container'
 
@@ -7,7 +6,7 @@ div class='container'
     tr
       th class='text-info' = t('.title')
       th class='text-info' = t('.type')
-      th class='text-info' = t('.id')
+      th class='text-info' = t('.target')
       th class='text-info text-center' colspan="3" = t('.actions')
     = render @badges
 
@@ -20,6 +19,8 @@ h2 Earned Badges
       tr
         th class='text-info' = t('.title')
         th class='text-info' = t('.type')
-        th class='text-info' = t('.id')
+        th class='text-info' = t('.target')
         th class='text-info text-center' colspan="3" = t('.actions')
       = render @earned_badges
+
+p = link_to t('back'), admin_tests_path

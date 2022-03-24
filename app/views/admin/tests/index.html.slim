@@ -1,6 +1,7 @@
 h1 = t('.header')
 
 p = link_to 'badges', admin_badges_path
+p = link_to 'categories', admin_categories_path
 p = link_to t('.new'), new_admin_test_path
 
 div class='container'
@@ -15,5 +16,5 @@ div class='container'
         = octicon 'arrow-down', class: 'text-success hide'
       th class='text-info' = t('.level')
       th class='text-info' = t('.questions')
-      th class='text-info text-center' colspan="4" = t('.actions')
+      th class='text-info text-center' colspan="5" = t('.actions')
     = render @tests

@@ -4,11 +4,8 @@
     = form.label :title
     br = form.text_field :title
   p
-    = form.label :action_type
-    br = form.select :action_type, Badge.action_types.keys
-  p
-    = form.label :object_id
-    br = form.number_field :object_id, step: 1
+    = form.label :image_url
+    br = form.text_field :image_url
   p = form.submit
 
 

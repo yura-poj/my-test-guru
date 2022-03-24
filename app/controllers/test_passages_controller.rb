@@ -3,6 +3,9 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show result update gist result_if_test_is_completed]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_passage_not_found
+
+
   def show
     @user = current_user
   end
@@ -39,7 +42,10 @@ class TestPassagesController < ApplicationController
 
   def test_completed
     TestsMailer.completed_test(@test_passage).deliver_now
-    render :result
+    redirect_to result_test_passage_url(@test_passage)
   end
 
+  def rescue_with_test_passage_not_found
+    render plain: 'Test passage was not found'
+  end
 end

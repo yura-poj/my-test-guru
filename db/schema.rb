@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(version: 2022_03_09_141454) do
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
     t.integer "action_type", null: false
-    t.integer "object_id", null: false
+    t.string "image_url"
+    t.bigint "test_id"
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["action_type"], name: "index_badges_on_action_type"
+    t.index ["category_id"], name: "index_badges_on_category_id"
+    t.index ["test_id"], name: "index_badges_on_test_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -121,6 +125,8 @@ ActiveRecord::Schema.define(version: 2022_03_09_141454) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "categories"
+  add_foreign_key "badges", "tests"
   add_foreign_key "earned_badges", "badges"
   add_foreign_key "earned_badges", "users"
   add_foreign_key "gists", "questions"

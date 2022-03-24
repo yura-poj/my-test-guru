@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
-  before_action :set_test, only: %i[show update edit destroy start update_inline]
+  before_action :set_test, only: %i[show update edit destroy start update_inline new_badge]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def show
@@ -42,6 +43,11 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
+    @test.test_passages.each { |test_passage| test_passage.destroy}
+    @test.questions.each do |question|
+      question.answers.each { |answer| answer.destroy}
+      question.destroy
+    end
     @test.destroy
     render :index
   end
@@ -49,6 +55,10 @@ class Admin::TestsController < Admin::BaseController
   def start
     current_user.tests.push(@test)
     redirect_to current_user.test_passage(@test)
+  end
+
+  def new_badge
+    @badge = Badge.new
   end
 
   private

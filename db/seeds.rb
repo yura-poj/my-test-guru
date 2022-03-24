@@ -29,3 +29,10 @@ answers = Answer.create([
                           { correct: true, question: questions.third, body: :True},
                           { correct: false, question: questions.third, body: :"I don't know"}
                         ])
+Badge.create( [
+                { title: 'one', action_type: :test, test: tests.first,
+                  image_url: 'https://cdn.schoolstickers.com/products/en/819/102713-03.png' },
+                { title: 'two', action_type: :level, test: tests.second,
+                  image_url: 'https://cdn.schoolstickers.com/products/en/819/102713-03.png' },
+                { title: 'three', action_type: :category, category: categories.second }
+              ] )

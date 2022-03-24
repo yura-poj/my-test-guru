@@ -4,6 +4,9 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
+
+
   # GET /answers or /answers.json
   def index
     @answers = Answer.all
@@ -57,5 +60,9 @@ class Admin::AnswersController < Admin::BaseController
 
   def answer_params
     params.require(:answer).permit(%i[body correct question_id])
+  end
+
+  def rescue_with_answer_not_found
+    render plain: 'answer was not found'
   end
 end

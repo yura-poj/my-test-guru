@@ -1,19 +1,11 @@
 h1 = t('.header')
-
-p = link_to 'badges', admin_badges_path
-p = link_to t('.new'), new_admin_test_path
+p = link_to t('.new'), new_admin_category_path
 
 div class='container'
-
-  = render 'shared/errors', resource: @test
-
   table class='table'
     tr
-      th class='text-info sort-by-title pointer border-d'
-        = t('.title')
-        = octicon 'arrow-up', class: 'text-success hide'
-        = octicon 'arrow-down', class: 'text-success hide'
-      th class='text-info' = t('.level')
-      th class='text-info' = t('.questions')
-      th class='text-info text-center' colspan="4" = t('.actions')
-    = render @tests
+      th class='text-info  border-d' = t('title')
+      th class='text-info text-center' colspan="1" = t('actions')
+    = render @categories
+
+p = link_to t('back')', admin_tests_path
