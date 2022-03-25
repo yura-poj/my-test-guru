@@ -11,14 +11,14 @@ RSpec.describe Badge, type: :model do
 
   describe 'earned_badges' do
     it 'should return empty array' do
-      expect(Badge.earned_badges(test_passage)).to eq([])
+      expect(BadgeService.new(test_passage: test_passage).earned_badges).to eq([])
     end
 
     it 'should return earned badges' do
       test_passage.correct_questions += 1
       test_passage.save!
 
-      expect(Badge.earned_badges(test_passage)).to eq(badges)
+      expect(BadgeService.new(test_passage: test_passage).earned_badges).to eq(badges)
     end
   end
 end

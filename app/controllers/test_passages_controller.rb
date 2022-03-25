@@ -11,7 +11,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    @earned_badges = Badge.earned_badges(@test_passage)
+    @earned_badges = BadgeService.new(test_passage: @test_passage).earned_badges
   end
 
   def gist
