@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :lockable, :timeoutable, and :omniauthable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -13,6 +11,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_test, class_name: 'Test'
   has_many :gists
+  has_many :earned_badges
+  has_many :badges, through: :earned_badges
+
 
   scope :new_users, ->(date) { where('created_at > date', date) }
 

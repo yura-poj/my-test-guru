@@ -2,7 +2,8 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :authenticate_user!
 
   before_action :set_test, only: %i[index new create]
-  before_action :find_question, only: %i[show delete edit update destroy]
+  before_action :find_question, only: %i[show edit update destroy]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def show; end
@@ -38,6 +39,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @test = @question.test
+    @question.answers.each { |answer| answer.destroy }
     @question.destroy
     redirect_to admin_test_path(@test)
   end

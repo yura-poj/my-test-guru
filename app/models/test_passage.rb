@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_out?
-    self.created_at + self.test.timer.minutes < DateTime.now
+    time_end < DateTime.now
   end
 
   def result_in_percents
@@ -36,7 +36,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_end
-    self.created_at + self.test.timer.minutes
+    created_at + test.timer.minutes
   end
 
   private

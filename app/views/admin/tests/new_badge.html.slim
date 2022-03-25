@@ -1,0 +1,13 @@
+= form_with model: [:admin, @badge], url: admin_badges_path, method: :post, local: true do |form|
+  = render 'shared/errors', resource: @badge
+  p
+    = form.label :title
+    br = form.text_field :title
+  p
+    = form.label :action_type
+    br = form.select :action_type, [['by test with on try', :test],['by level', :level]]
+  p
+    = form.label :image_url
+    br = form.text_field :image_url
+  p = form.hidden_field :test_id, value: @test.id
+  p = form.submit

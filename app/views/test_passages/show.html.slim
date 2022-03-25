@@ -1,7 +1,8 @@
 = content_tag :div, class: 'test-passage-progress', data: { progress: progress() }
   progress max=100 value=0
 
-= content_tag :p, 'Time left:', class: 'time-left', data: { time: @test_passage.time_end().to_s}
+= content_tag :p, 'Time left:', class: 'time-left',
+        data: { time: @test_passage.time_end().to_s,url: result_if_test_is_completed_test_passage_path(@test_passage)}
 
 h2 = t('.header', title: @test_passage.test.title, email: current_user.email )
 

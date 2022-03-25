@@ -1,13 +1,18 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_test_passage, only: %i[show result update gist]
+  before_action :set_test_passage, only: %i[show result update gist result_if_test_is_completed]
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_passage_not_found
+
 
   def show
     @user = current_user
   end
 
-  def result; end
+  def result
+    @earned_badges = BadgeService.new(test_passage: @test_passage).earned_badges
+  end
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
@@ -21,9 +26,12 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    return test_completed if @test_passage.time_out?
     @test_passage.accept!(params[:answer_ids])
-    @test_passage.completed? ? test_completed : ( render :show )
+    result_if_test_is_completed
+  end
+
+  def result_if_test_is_completed
+    @test_passage.completed? ? test_completed : ( render :show)
   end
 
   private
@@ -34,7 +42,10 @@ class TestPassagesController < ApplicationController
 
   def test_completed
     TestsMailer.completed_test(@test_passage).deliver_now
-    redirect_to result_test_passage_path(@test_passage)
+    redirect_to result_test_passage_url(@test_passage)
   end
 
+  def rescue_with_test_passage_not_found
+    render plain: 'Test passage was not found'
+  end
 end

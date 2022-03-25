@@ -1,0 +1,13 @@
+= form_with model: [:admin, @badge], url: admin_badges_path, method: :post, local: true do |form|
+  = render 'shared/errors', resource: @badge
+  p
+    = form.label :title
+    br = form.text_field :title
+  p
+    = form.label :image_url
+    br = form.text_field :image_url
+  p = form.hidden_field :action_type, value: :category
+  p = form.hidden_field :category_id, value: @category.id
+  p = form.submit
+
+p = link_to t('back'), admin_categories_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_090246) do
+ActiveRecord::Schema.define(version: 2022_03_09_141454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,33 @@ ActiveRecord::Schema.define(version: 2022_03_02_090246) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "badges", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "action_type", null: false
+    t.string "image_url"
+    t.bigint "test_id"
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["action_type"], name: "index_badges_on_action_type"
+    t.index ["category_id"], name: "index_badges_on_category_id"
+    t.index ["test_id"], name: "index_badges_on_test_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["title"], name: "index_categories_on_title"
+  end
+
+  create_table "earned_badges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_earned_badges_on_badge_id"
+    t.index ["user_id"], name: "index_earned_badges_on_user_id"
   end
 
   create_table "gists", force: :cascade do |t|
@@ -103,6 +125,10 @@ ActiveRecord::Schema.define(version: 2022_03_02_090246) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "categories"
+  add_foreign_key "badges", "tests"
+  add_foreign_key "earned_badges", "badges"
+  add_foreign_key "earned_badges", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"

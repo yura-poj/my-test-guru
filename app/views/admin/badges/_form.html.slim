@@ -1,0 +1,11 @@
+= form_with model: [:admin, @badge], local: true do |form|
+  = render 'shared/errors', resource: @badge
+  p
+    = form.label :title
+    br = form.text_field :title
+  p
+    = form.label :image_url
+    br = form.text_field :image_url
+  p = form.submit
+
+

@@ -1,0 +1,8 @@
+tr
+  td class='align-middle ' = category.title
+  td class='align-middle text-center' = link_to t('delete'),
+          admin_category_path(category),
+          method: :delete,
+          data: { confirm: 'Are you sure?'}
+  td class='align-middle text-center' = link_to 'create badge', new_badge_admin_category_path(category)
+

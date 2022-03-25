@@ -1,0 +1,11 @@
+h1 = t('.header')
+p = link_to t('.new'), new_admin_category_path
+
+div class='container'
+  table class='table'
+    tr
+      th class='text-info  border-d' = t('title')
+      th class='text-info text-center' colspan="1" = t('actions')
+    = render @categories
+
+p = link_to t('back')', admin_tests_path
