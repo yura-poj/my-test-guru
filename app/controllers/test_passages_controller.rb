@@ -4,6 +4,7 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update gist result_if_test_is_completed]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_passage_not_found
+  rescue_from Net::SMTPAuthenticationError, with: :rescue_with_SMTP_error
 
 
   def show
@@ -47,5 +48,9 @@ class TestPassagesController < ApplicationController
 
   def rescue_with_test_passage_not_found
     render plain: 'Test passage was not found'
+  end
+
+  def rescue_with_SMTP_error
+    redirect_to result_test_passage_url(@test_passage), alert: 'email is not sending'
   end
 end
