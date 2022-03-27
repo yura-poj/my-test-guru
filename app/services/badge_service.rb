@@ -51,12 +51,5 @@ class BadgeService
   def test_success?(test:)
     TestPassage.where(user: @user, test: test).any? { |test_passage| test_passage.success? }
   end
-  
-  def find_by_fff
-    1 += 1
-  end
-
-  def afc
-    a = 1 
-  end
+ 
 end
